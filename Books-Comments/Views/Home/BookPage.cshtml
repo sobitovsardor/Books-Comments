@@ -1,0 +1,36 @@
+﻿@using Books_Comments.Service.Dtos.Products;
+@using Books_Comments.Service.ViewModels;
+@model  List<CommentViewModel>
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<div class="container d-flex justify-content-center mt-100 mb-100">
+    <form asp-area="" asp-controller="Home" asp-action="bookpage" method="get">
+        <div class="row">
+            <div class="col-md-12">
+                @{  
+                    foreach (var product in Model)
+                    {
+                        <div class="d-flex flex-row add-comment-section mt-4 mb-4">
+                            <a class="btn btn-secondayr" asp-action="Commentpage" method="get" asp-controller="Home" asp-route-bookId="@product.BookId"> Add Comment</a>
+                            </div>
+                            <div class="comment-widgets m-b-20">
+
+                            <div class="d-flex flex-row comment-row">
+                                <div class="p-2"><span class="round"><img src="@product.AccountBaseViewModel.ImagePath" alt="user" width="50"></span></div>
+                                <div class="comment-text w-100">
+                                    <h5>@product.AccountBaseViewModel.UserName</h5>
+                                    <div class="comment-footer">
+                                    </div>
+                                    <p class="m-b-5 m-t-10">@product.Description</p>
+                                </div>
+                            </div>
+                            </div>
+                    }
+                }
+            </div>
+        </div>
+    </form>
+</div>

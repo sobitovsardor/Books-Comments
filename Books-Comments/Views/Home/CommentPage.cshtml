@@ -1,0 +1,21 @@
+﻿@using Books_Comments.Service.Dtos.Products;
+@using Books_Comments.Service.ViewModels;
+@model CommentDto
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<div class="" style="margin-top: 150px; margin-left: 370px; margin-bottom: 50px; margin-right: 370px;">
+    <div class="col-xl-30 col-md-50 card w-350px h-300" >
+        <div class="modal-body">
+
+                <input placeholder="Description" asp-for="Description" type="text"  class="form-control">   
+                <div class="modal-footer">
+                    <a class="btn btn-secondayr" type="submit" value="Comment" asp-action="commentpage" method="post" asp-controller="Home">Commit</a>
+ 
+        </div>  
+            </div>
+</div>
+</div>
+  

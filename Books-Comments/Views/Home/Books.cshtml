@@ -1,0 +1,55 @@
+﻿@using Books_Comments.Service.ViewModels.Products;
+@model List<ProductBaseViewModel>
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<div class="row g-10" style="display: flex;justify-content: center">
+    @{
+        foreach (var product in Model)
+        {
+            <figure class="movie " style="margin-right: 160px; margin-top: 20px;">
+                <div class="movie__hero">
+                    <img src="@product.ImagePath" width="245" height="300" style="margin-left: 60px;">
+                </div>
+                <div class="movie__content">
+                    <div class="movie__title" >
+                        <h1 class="heading__primary">@product.Name <i class="fas fa-fire" ></i></h1>
+                        <div>
+                            @{
+                                if (product.Category == "Programming")
+                                {
+                                    <div class="movie__tag movie__tag--1">@product.Category</div>
+                                }
+                                else
+                                {
+                                    <div class="movie__tag movie__tag--2">@product.Category</div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                    <p class="movie__description">
+                        @product.Description
+                    </p>
+                    <div class="movie__details">
+                        <p class="movie__detail">
+                            <span class="icons icons-red"><i class="fas fa-camera-retro"></i> </span>Buzz
+                            Feitshans
+                        </p>
+                        <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-clock"></i> </span>1h 33m</p>
+                        <p class="movie__detail">
+                            <span class="icons icons-yellow">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </span>$12.52 crores
+                        </p>
+                    </div>
+                </div>
+                <btn class="movie__price">
+                    <a asp-action="bookpage" asp-controller="Home">Comments</a>
+                </btn>
+                </figure>
+        }
+    }
+</div>

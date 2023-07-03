@@ -1,0 +1,32 @@
+﻿@using Books_Comments.Service.Dtos.Accounts;
+@model AccountLoginDto
+@{
+    Layout = "_AccontLayout.cshtml";
+}
+
+<div class="" style="margin-top: 150px; margin-left: 370px; margin-bottom: 50px; margin-right: 370px;">
+    <div class="col-xl-30 col-md-50 card w-350px h-300" >
+    <form asp-area="" asp-controller="accounts" asp-action="login" method="post">
+    <div class="modal-header">
+        <div class="modal-title h4">Sign in</div>
+    </div>
+    <div class="modal-body">
+        
+            <div class="mb-3">
+                <label class="form-label" >Email</label>
+                <input placeholder="Email" asp-for=Email type="email" id="emailLogin" class="form-control">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" >Enter Password</label>
+                <input placeholder="Password" asp-for="Password" type="password" id="PasswordLogin" class="form-control">
+                 <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+    </div>
+    <div class="modal-footer">
+            <a class="btn btn-secondayr" asp-action="registor" asp-controller="accounts">Sign Up</a>
+        <input type="submit" class="btn btn-primary" value="Sign In" />
+        </div>
+    </form>
+</div>
+</div>
